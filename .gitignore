@@ -40,3 +40,8 @@ venv/
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
+set_env.sh
+udagram-api-feed/node_modules/
+udagram-api-user/node_modules/
+udagram-frontend/node_modules/
+udagram-api/node_modules/
