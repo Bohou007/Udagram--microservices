@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-user
+  labels:
+    app: backend-user
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: backend-user
+  template:
+    metadata:
+      labels:
+        app: backend-user
+    spec:
+      containers:
+        - name: backend-user
+          image: paulelie007/udagram-api-user:1.0
+          ports:
+            - containerPort: 8080
+          envFrom:
+            - configMapRef:
+                name: env-configmap
+            - secretRef:
+                name: env-pg-secrets
+          volumeMounts:
+            - mountPath: "/root/.aws/"
+              name: aws-credential
+      volumes:
+        - name: aws-credential
+          configMap: 
+            name: aws-credential
