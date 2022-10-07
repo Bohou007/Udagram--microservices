@@ -17,6 +17,13 @@ spec:
       containers:
         - name: backend-user
           image: paulelie007/udagram-api-user:1.0
+          resources:
+            requests:
+              cpu: 500m
+              memory: 3012Mi
+            limits:
+              cpu: 500m
+              memory: 3012Mi
           ports:
             - containerPort: 8080
           envFrom:
