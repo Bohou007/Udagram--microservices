@@ -3,7 +3,7 @@ language: node_js
 services:
   - docker
 
-script:
+after_succes:
   - docker-compose -f docker-compose-build.yaml build --parallel
   - docker tag reverseproxy paulelie007/reverseproxy:1.0
   - docker tag udagram-api-user paulelie007/udagram-api-user:1.0
