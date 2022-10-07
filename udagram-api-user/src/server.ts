@@ -13,10 +13,6 @@ import { V0_USER_MODELS } from './controllers/v0/model.index';
   await sequelize.addModels(V0_USER_MODELS);
 
   console.debug("Initialize database connection...");
-  console.debug(config.host);
-  console.debug(config.username);
-  console.debug(config.password);
-  console.debug(config.database);
   await sequelize.sync();
 
   const app = express();
